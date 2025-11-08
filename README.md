@@ -5,7 +5,7 @@
 **Updates** 
 - AI Agent Brake System Integrated and passed initial limitation tests. Is still a WIP! WORKS ON BUMPS, CHICANE & HAIRPINS!!
 
-**Pitfalls and Oopsies**
+**Pitfalls **
 - IMPORTANT - ANGULAR DAMPING SHOULD BE SET TO 1.6 - 2.1. Reduce at own risk.
 
 ![pathFinder](https://github.com/user-attachments/assets/8d6d9115-333c-4ca4-a346-fb06583185d5)
@@ -26,7 +26,17 @@
 - CarControl script (for handling motor/brake/steering input) // already included
 - WheelCollider-based vehicle physics
 
-## Quick Start
+## Quick Start and installation
+
+Add the AICarController script to your AI car GameObject.
+
+Ensure the car has a Rigidbody and a CarControl component.
+
+Create a series of waypoints in the scene.
+
+Assign the waypoints array in the AICarController inspector.
+
+Optionally, add the Waypoint script to each waypoint to define brake zones and custom target points.
 
 ### 1. Setup Your Vehicle
 
@@ -135,7 +145,7 @@ Multi-layer steering for natural behavior:
 
 - **Yellow lines** - Connect waypoints to show track layout
 - **Green** - Current AI path 
-~~- - **Red line** - (red = brake zone active)~~
+- - **Red line** - (red = brake zone active)
 - **Blue ray** - Vehicle forward direction
 - **Spheres at waypoints** - Green (normal) / (Red (brake zones) not yet implemented coming soon)
 
@@ -220,7 +230,7 @@ Start Delay: 5
 
 ## License
 
-This project is provided as-is for educational and commercial use. No responsibility or accountability is taken for any damages and loss by the use of this software. As with all software use with caution.
+MIT License – free to use and modify in personal or commercial projects.
 
 ## Contributing and public involvement
 
