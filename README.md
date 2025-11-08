@@ -2,11 +2,17 @@
 
 **Intelligent waypoint-based racing AI for Unity** - Create competitive opponents that handle any circuit with customizable driving styles.
 
+**Updates** 
+- AI Agent Brake System Integrated and passed initial limitation tests. Is still a WIP! WORKS ON BUMPS, CHICANE & HAIRPINS!!
+
+**Pitfalls and Oopsies**
+- IMPORTANT - ANGULAR DAMPING SHOULD BE SET TO 1.6 - 2.1. Reduce at own risk.
+
 ![pathFinder](https://github.com/user-attachments/assets/8d6d9115-333c-4ca4-a346-fb06583185d5)
 
 - **Waypoint-Based Navigation** - Guide AI vehicles through custom race circuits
 - **Smart Corner Detection** - Automatically detects and adjusts speed for sharp turns
-~~- **Brake Zone Markers** - Manual control over specific braking points~~
+-  **Brake Zone Markers** - Manual control over specific braking points
 - **Configurable Driving Style** - Adjust aggression, speed, and handling characteristics
 - **Stuck Recovery System** - Automatically reverses and recovers from obstacles
 - **Smooth Steering** - Natural-looking steering with configurable smoothing and deadzones
@@ -39,17 +45,17 @@ Add the `AICarController` component to your vehicle GameObject. Ensure your vehi
 Track Layout: Start → WP1 → WP2 → WP3 → ... → Finish (loops back to Start)
 ```
 
-~~### 3. Configure Brake Zones (Optional)~~
+### 3. Configure Brake Zones (Optional) RECOMMENDED, 
 
-~~Mark specific waypoints as brake zones for precise speed control:~~
+Mark specific waypoints as brake zones for precise speed control:
 
-~~1. Select a waypoint GameObject~~
-~~2. In the Waypoint component, check `isBrakeZone`~~
-~~3. Set `targetSpeedMultiplier` (0.5 = 50% speed)~~
+1. Select a waypoint GameObject
+2. In the Waypoint component, check `isBrakeZone`
+3. Set `targetSpeedMultiplier` (0.5 = 50% speed)
 
-~~Visual indicators:~~
-~~- Green spheres = normal waypoints~~
-~~- Red spheres = brake zone waypoints~~
+~~Visual indicators:
+~~- Green spheres = normal waypoints
+~~- Red spheres = brake zone waypoints
 
 ## Configuration
 
@@ -104,13 +110,13 @@ The AI analyzes upcoming waypoints to calculate corner angles:
 
 Speed reduction is gradual based on distance to corner for smooth deceleration.
 
-~~### Brake Zones~~
+~~### Brake Zones
 
-~~Manual brake zones override automatic corner detection when stricter control is needed:~~
+~~Manual brake zones override automatic corner detection when stricter control is needed:
 
-~~- Useful for complex sections (chicanes, hairpins)~~
-~~- Combines with corner detection (uses lower speed requirement)~~
-~~- Configurable per-waypoint speed targets~~
+- Useful for complex sections (chicanes, hairpins)
+- - Combines with corner detection (uses lower speed requirement)
+- - Configurable per-waypoint speed targets
 
 ### Steering System
 
@@ -211,7 +217,6 @@ Start Delay: 5
 - No overtaking logic (reserved for future implementation)
 - Best suited for circuit racing (not open-world navigation)
 - Collision avoidance not implemented
-- Brake zones to be implemented shortly
 
 ## License
 
