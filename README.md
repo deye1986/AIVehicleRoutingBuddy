@@ -1,12 +1,12 @@
 # AIVehicleRoutingBuddy by David Ikin 2025
 
 **Intelligent waypoint-based racing AI for Unity** - Create competitive opponents that handle any circuit with customizable driving styles.
+
 ![pathFinder](https://github.com/user-attachments/assets/8d6d9115-333c-4ca4-a346-fb06583185d5)
-## Features
 
 - **Waypoint-Based Navigation** - Guide AI vehicles through custom race circuits
 - **Smart Corner Detection** - Automatically detects and adjusts speed for sharp turns
-- **Brake Zone Markers** - Manual control over specific braking points
+~~- **Brake Zone Markers** - Manual control over specific braking points~~
 - **Configurable Driving Style** - Adjust aggression, speed, and handling characteristics
 - **Stuck Recovery System** - Automatically reverses and recovers from obstacles
 - **Smooth Steering** - Natural-looking steering with configurable smoothing and deadzones
@@ -17,7 +17,7 @@
 
 - Unity 2020.3 or higher
 - Vehicle with Rigidbody component
-- CarControl script (for handling motor/brake/steering input)
+- CarControl script (for handling motor/brake/steering input) // already included
 - WheelCollider-based vehicle physics
 
 ## Quick Start
@@ -39,17 +39,17 @@ Add the `AICarController` component to your vehicle GameObject. Ensure your vehi
 Track Layout: Start → WP1 → WP2 → WP3 → ... → Finish (loops back to Start)
 ```
 
-### 3. Configure Brake Zones (Optional)
+~~### 3. Configure Brake Zones (Optional)~~
 
-Mark specific waypoints as brake zones for precise speed control:
+~~Mark specific waypoints as brake zones for precise speed control:~~
 
-1. Select a waypoint GameObject
-2. In the Waypoint component, check `isBrakeZone`
-3. Set `targetSpeedMultiplier` (0.5 = 50% speed)
+~~1. Select a waypoint GameObject~~
+~~2. In the Waypoint component, check `isBrakeZone`~~
+~~3. Set `targetSpeedMultiplier` (0.5 = 50% speed)~~
 
-Visual indicators:
-- Green spheres = normal waypoints
-- Red spheres = brake zone waypoints
+~~Visual indicators:~~
+~~- Green spheres = normal waypoints~~
+~~- Red spheres = brake zone waypoints~~
 
 ## Configuration
 
@@ -104,13 +104,13 @@ The AI analyzes upcoming waypoints to calculate corner angles:
 
 Speed reduction is gradual based on distance to corner for smooth deceleration.
 
-### Brake Zones
+~~### Brake Zones~~
 
-Manual brake zones override automatic corner detection when stricter control is needed:
+~~Manual brake zones override automatic corner detection when stricter control is needed:~~
 
-- Useful for complex sections (chicanes, hairpins)
-- Combines with corner detection (uses lower speed requirement)
-- Configurable per-waypoint speed targets
+~~- Useful for complex sections (chicanes, hairpins)~~
+~~- Combines with corner detection (uses lower speed requirement)~~
+~~- Configurable per-waypoint speed targets~~
 
 ### Steering System
 
@@ -128,9 +128,10 @@ Multi-layer steering for natural behavior:
 ### Visual Gizmos
 
 - **Yellow lines** - Connect waypoints to show track layout
-- **Green/Red lines** - Current AI path (red = brake zone active)
+- **Green** - Current AI path 
+~~- - **Red line** - (red = brake zone active)~~
 - **Blue ray** - Vehicle forward direction
-- **Spheres at waypoints** - Green (normal) / Red (brake zones)
+- **Spheres at waypoints** - Green (normal) / (Red (brake zones) not yet implemented coming soon)
 
 ### Debug Properties
 
@@ -156,13 +157,13 @@ public float CurrentThrottleInput { get; } // Current throttle input value
 
 - Increase `steerSmoothingFactor` (4-6)
 - Increase `cornerLookahead` (25-30)
-- Use more brake zone waypoints for precise control
+- Use more brake zone waypoints for precise control (coming soon)
 - Lower `steeringPower` (1.0-1.3)
 
 ### For Tight Technical Tracks
 
 - Increase `sharpCornerAngle` threshold (50-60)
-- Add brake zones before hairpins
+- Add brake zones before hairpins (coming soon)
 - Reduce `targetSpeed`
 - Increase `steerSmoothingFactor`
 
@@ -210,14 +211,13 @@ Start Delay: 5
 - No overtaking logic (reserved for future implementation)
 - Best suited for circuit racing (not open-world navigation)
 - Collision avoidance not implemented
+- Brake zones to be implemented shortly
 
 ## License
 
-This project is provided as-is for educational and commercial use.
+This project is provided as-is for educational and commercial use. No responsibility or accountability is taken for any damages and loss by the use of this software. As with all software use with caution.
 
-## Contributing
-
-Contributions welcome! Areas for improvement:
+## Contributing and public involvement
 
 - Overtaking behavior for multi-car races
 - Dynamic difficulty adjustment
@@ -227,4 +227,4 @@ Contributions welcome! Areas for improvement:
 
 ## Credits
 
-Developed for Unity racing game projects requiring competitive AI opponents.
+Developed for Unity racing game projects requiring competitive AI opponents. David Ikin 2025.
